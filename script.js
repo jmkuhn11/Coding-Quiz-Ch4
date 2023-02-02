@@ -16,8 +16,8 @@ var submitButton = document.getElementById('submit');
 
 var timeInterval;
 var timeLeft = 60;
-var questionsArray = ["q1", "q2", "q3", "q4","q5", "q6", "q7", "q8", "q9", "q10", "q11"];
-var answersArray = [["q1a1", "q1a2", "q1a3", "q1a4"], ["q2a1", "q2a2", "q2a3", "q2a4"], ["q3a1", "q3a2", "q3a3", "q3a4"], ["q4a1", "q4a2", "q4a3", "q4a4"], ["q5a1", "q5a2", "q5a3", "q5a4"], ["q6a1", "q6a2", "q6a3", "q6a4"], ["q7a1", "q7a2", "q7a3", "q7a4"], ["q8a1", "q8a2", "q8a3", "q8a4"], ["q9a1", "q9a2", "q9a3", "q9a4"], ["q10a1", "q10a2", "q10a3", "q10a4"], ["q11a1", "q11a2", "q11a3", "q11a4"]];
+var questionsArray = ["What does HTML stand for?", "q2", "q3", "q4","q5", "q6", "q7", "q8", "q9", "q10", "q11"];
+var answersArray = [["Hypertext Markup Language", "How the Mighty Live", "Hate that Ms. Lemon", "Handle the Milliliters"], ["q2a1", "q2a2", "q2a3", "q2a4"], ["q3a1", "q3a2", "q3a3", "q3a4"], ["q4a1", "q4a2", "q4a3", "q4a4"], ["q5a1", "q5a2", "q5a3", "q5a4"], ["q6a1", "q6a2", "q6a3", "q6a4"], ["q7a1", "q7a2", "q7a3", "q7a4"], ["q8a1", "q8a2", "q8a3", "q8a4"], ["q9a1", "q9a2", "q9a3", "q9a4"], ["q10a1", "q10a2", "q10a3", "q10a4"], ["q11a1", "q11a2", "q11a3", "q11a4"]];
 var correctAnswersArray = [1, 3, 4, 3, 2, 4, 4, 2, 3, 2];
 var questionCount = 0;
 
@@ -30,8 +30,6 @@ var resetButton = document.getElementById('reset');
 var leaderboard = document.querySelector('.leaderboard');
 var points = 0;
 var logResults = 0;
-
-var pastAttempts = document.querySelector(".past-attempts");
 
 function openPage() {
 
@@ -65,11 +63,11 @@ function logInput() {
 }
 
 function createLeaderboard() {
-    var board = "</br></br><table border='2'><tr><td colspan='2'><b>RESULTS</b></td></tr>";
+    var board = "</br></br><center><table border='2'><tr><td colspan='2'><b>RESULTS</b></td></tr>";
     for (let i = 0; i < logResults; i++) {
         board += localStorage.getItem(i) + "\n";
     }
-    board += "</table>";
+    board += "</center></table>";
     leaderboard.innerHTML = board;
 }
 
