@@ -15,9 +15,9 @@ var buttona4 = document.getElementById('a4');
 var submitButton = document.getElementById('submit');
 
 var timeInterval;
-var timeLeft = 60;
-var questionsArray = ["What does HTML stand for?", "q2", "q3", "q4","q5", "q6", "q7", "q8", "q9", "q10", "q11"];
-var answersArray = [["Hypertext Markup Language", "How the Mighty Live", "Hate that Ms. Lemon", "Handle the Milliliters"], ["q2a1", "q2a2", "q2a3", "q2a4"], ["q3a1", "q3a2", "q3a3", "q3a4"], ["q4a1", "q4a2", "q4a3", "q4a4"], ["q5a1", "q5a2", "q5a3", "q5a4"], ["q6a1", "q6a2", "q6a3", "q6a4"], ["q7a1", "q7a2", "q7a3", "q7a4"], ["q8a1", "q8a2", "q8a3", "q8a4"], ["q9a1", "q9a2", "q9a3", "q9a4"], ["q10a1", "q10a2", "q10a3", "q10a4"], ["q11a1", "q11a2", "q11a3", "q11a4"]];
+var timeLeft = 120;
+var questionsArray = ["Q1: What does HTML stand for?", "Q2: What does CSS stand for?", "Q3: If you needed to use a 'for' loop, which type of file would you put the code in?", "Q4: Which of these is similar to 'getElementbyID'?","Q5: If you needed to incorporate the use of clicking a button, you would use ____.", "Q6: If you needed to include CSS elements for all of these sections, which section should be listed first on your CSS Sheet?", "Q7: What is the order of events for committing work on your personal laptop to your GitHub repository?", "Q8: On Gitbash (or the Mac equivalent), what command helps you move up to the parent file?", "Q9: What Javascript method clears an interval?", "Q10: Who is the best coder in Boot Camp?", ""];
+var answersArray = [["Hypertext Markup Language", "How the Mighty Live", "Hate that Ms. Lemon", "Handle the Milliliters"], ["Crazy Stupid Script", "Cool Stocking Stuffers", "Cascading Style Sheet", "Christmas Story: South Carolina"], ["HTML", "CSS", "READMe", "Javascript"], ["IdSelector", "getElementBySelector", "querySelector", "selectorSelector"], ["addClickButton", "addEventListener", "addKeyDownDetector", "addKeyUpDetector"], ["Body", "Header", "Nav", "Root"], ["git commit -> git push -> git add", "git push -> git add -> git commit", "git push -> git commit -> git add", "git add -> git commit -> git push"], ["//", "..", "///", "..."], ["stopInterval", "resetInterval", "clearInterval", "stopDropAndRoll"], ["Not this One", "Josh Kuhn", "Look Above for Reference", "Can you Read?"], ["", "", "", ""]];
 var correctAnswersArray = [1, 3, 4, 3, 2, 4, 4, 2, 3, 2];
 var questionCount = 0;
 
@@ -40,7 +40,7 @@ function openPage() {
 
     questionCount = 0;
 
-    rulesEl.textContent = "Welcome to the Coding Quiz! This is a method to test your knowledge and help evaulate how much you have leared over the course of your Bootcamp. It is very similar to some of the challenges you might face in a future job interview, so remember the format for when you enter the workforce. For this assessment, you will have 1 minute to answer 10 questions. Each right answer will score a point, while each wrong answer will take some time off the clock. Hit 'start' to begin.";
+    rulesEl.textContent = "Welcome to the Coding Quiz! This is a method to test your knowledge and help evaulate how much you have leared over the course of your Boot Camp. It is very similar to some of the challenges you might face in a future job interview, so remember the format for when you enter the workforce. For this assessment, you will have 2 minutes to answer 10 questions. Each right answer will score a point, while each wrong answer will take some time off the clock. Hit 'start' to begin.";
 }
 
 function endPage() {
@@ -63,7 +63,7 @@ function logInput() {
 }
 
 function createLeaderboard() {
-    var board = "</br></br><center><table border='2'><tr><td colspan='2'><b>RESULTS</b></td></tr>";
+    var board = "</br></br><center><table border='2'><tr><td colspan='2'><center><b>RESULTS</b></center></td></tr>";
     for (let i = 0; i < logResults; i++) {
         board += localStorage.getItem(i) + "\n";
     }
@@ -103,7 +103,7 @@ function nextQuestion(answerIndex) {
         points++;
     } else {
         rightOrWrong.textContent = "Wrong :(";
-        timeLeft = timeLeft - 5;
+        timeLeft = timeLeft - 10;
     } 
     
     if (questionCount < questionsArray.length -1) {
@@ -118,7 +118,7 @@ function startGame() {
 
     nextQuestion();
 
-    timeLeft = 60;
+    timeLeft = 120;
     timerEl.textContent = timeLeft + ' seconds remaining';
 
     qna.style.visibility = "visible";
