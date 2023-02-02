@@ -2,16 +2,8 @@ body {
     text-align: center;
 }
 
-header, .load {
+header, .load, h1 {
     width: 100%;
-}
-h1 {
-    width: 100%;
-    
-}
-
-.qna {
-    
 }
 
 .question-class {
@@ -33,10 +25,6 @@ h1 {
 #a1:hover, #a2:hover, #a3:hover, #a4:hover {
     border-radius: 20%;
     background-color: red;
-}
-
-.end-container {
-    
 }
 
 .hide {
