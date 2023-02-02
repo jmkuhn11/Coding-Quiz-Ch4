@@ -8,27 +8,39 @@
     <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+
     <header> 
-        <h2 id="highscores"></h2>
         <h1>Coding Quiz Challenge</h1>
-        <h2 id="countdown"></h2>
     </header>
 
-    <main>
+    <main class="main">
         <div class="load">
             <div class="rules"></div>
             <button class="start">Start</button>
         </div>
-        <div class="question-class">
-
-        </div>
-        <div class="answer-class">
-            <button id="a1"></button>
-            <button id="a2"></button>
-            <button id="a3"></button>
-            <button id="a4"></button>
+        <div class="qna">
+            <h2 id="countdown"></h2>
+            <div class="question-class"></div>
+            <div class="answer-class">
+                <button id="a1"></button>
+                <button id="a2"></button>
+                <button id="a3"></button>
+                <button id="a4"></button>
+            </div>
+            <div class="answer-status"></div>
         </div>
     </main>
+
+    <div class="end-container">
+        <h2 class="congrats-message"></h2>
+        <div class="points"></div>
+        <input type="text" id="input-box">
+        <button id="submit">Submit</button>
+        <button id="reset">Reset</button>
+        <div class="leaderboard"></div>
+    </div>
+
+    <div class="past=attempts"></div>
     
     <script src="./script.js"></script>
 </body>
